@@ -8,7 +8,7 @@ class TextInput extends Component {
           className="form-inline d-inline-block mx-auto my-auto"
           onSubmit={this.props.post}
         >
-          <div className="form-group my-5">
+          <div className="form-group my-3">
             <div className="container my-1">
               <input
                 type="text"
@@ -23,7 +23,7 @@ class TextInput extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Type post here..."
-                style={{ width: "500px" }}
+                style={{ width: "500px", height: "200px" }}
                 onChange={this.props.save}
               />
             </div>
