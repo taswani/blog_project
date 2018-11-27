@@ -19,6 +19,7 @@ class Posts extends Component {
       Object.keys(this.state.postDict).map(function(key) {
         dictKeys.push(key);
       });
+      console.log(Object.keys(this.state.postDict));
       this.setState({
         dictKeys: dictKeys,
         loading: false
@@ -34,15 +35,16 @@ class Posts extends Component {
     return (
       <div>
         <h1 className="mx-3"> Recent Posts: </h1>
-        {Object.keys(this.state.postDict).map(function(key, index) {
+        {Object.keys(this.state.postDict).map(function(keyIn) {
+          console.log(keyIn);
           return (
             <div>
               <ul>
-                <li key={key} className="mx-1 title">
-                  {key}
+                <li key={keyIn} className="mx-1 title">
+                  {keyIn}
                 </li>
-                <li key={this.state.postDict[key]} className="mx-1">
-                  {this.state.postDict[key]}
+                <li key={this.state.postDict[keyIn]} className="mx-1">
+                  {this.state.postDict[keyIn]}
                 </li>
               </ul>
             </div>
