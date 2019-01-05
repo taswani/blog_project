@@ -4,13 +4,15 @@ const { Post } = require("./model"); //PostSchema
 
 //Get route for top posts.
 router.get("/", function(req, res, next) {
-  Post.find().exec(function(err, post) {
-    if (err) return next(err);
-    //Database accuracy purposes
-    //uncomment if you want to see the databases' contents
-    //console.log(post);
-    res.json(post);
-  });
+  Post.find()
+    .limit(5)
+    .exec(function(err, post) {
+      if (err) return next(err);
+      //Database accuracy purposes
+      //uncomment if you want to see the databases' contents
+      //console.log(post);
+      res.json(post);
+    });
 });
 
 //Post route to create a search.

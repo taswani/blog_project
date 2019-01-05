@@ -4,6 +4,7 @@ class TextInput extends Component {
   render() {
     return (
       <div>
+        <h1>Post: </h1>
         <form
           className="form-inline d-inline-block mx-auto my-auto"
           onSubmit={this.props.post}
@@ -27,8 +28,11 @@ class TextInput extends Component {
                 onChange={this.props.save}
               />
             </div>
-            <div className="container">
-              <button type="submit" className="btn btn-info">
+            <div className="container text-center my-1">
+              <button
+                type="submit"
+                className="btn btn-outline-success btn-lg btn-block"
+              >
                 Submit
               </button>
             </div>

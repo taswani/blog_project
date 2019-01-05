@@ -35,13 +35,12 @@ class Posts extends Component {
     return (
       <div>
         <h1 className="mx-3"> Recent Posts: </h1>
-        {Object.keys(this.state.postDict).map(function(keyIn) {
-          console.log(keyIn);
+        {Object.keys(this.state.postDict).map(function(keyIn, index) {
           return (
             <div>
               <ul>
                 <li key={keyIn} className="mx-1 title">
-                  {keyIn}
+                  <a href={index + 1}>{keyIn}</a>
                 </li>
                 <li key={this.state.postDict[keyIn]} className="mx-1">
                   {this.state.postDict[keyIn]}

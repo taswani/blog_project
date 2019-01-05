@@ -10,7 +10,8 @@ class App extends Component {
     super();
     this.state = {
       title: "",
-      post: ""
+      post: "",
+      name: "Tanuj"
     };
   }
 
@@ -38,12 +39,23 @@ class App extends Component {
   render() {
     return (
       <div>
-        <TextInput
-          saveTitle={this.saveTitle}
-          save={this.savePost}
-          post={this.postPosts}
-        />
-        <Posts />
+        <h1 className="color text-center my-3">
+          {this.state.name + "'s"} Thoughts
+        </h1>
+        <div className="container my-5">
+          <div className="row jumbotron">
+            <div className="col-md-6">
+              <TextInput
+                saveTitle={this.saveTitle}
+                save={this.savePost}
+                post={this.postPosts}
+              />
+            </div>
+            <div className="col-md-6">
+              <Posts />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
